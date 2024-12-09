@@ -32,8 +32,8 @@
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label for="product_name"class="block text-gray-700">Product Name</label>
-                            <input type="text" id="product_name" name="product_name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                            <label for="productname"class="block text-gray-700">Product Name</label>
+                            <input type="text" id="productname" name="productname" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                         </div>
                     
                         <div>
@@ -45,8 +45,8 @@
                             <input type="number" id="price" name="price" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                         </div>
                         <div>
-                            <label for="stock_quantity"class="block text-gray-700">Stock Quantity</label>
-                            <input type="number" id="stock_quantity" name="stock_quantity" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                            <label for="stockquantity"class="block text-gray-700">Stock Quantity</label>
+                            <input type="number" id="stockquantity" name="stockquantity" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                         </div>
                         <div>
                             <label for="description"class="block text-gray-700">Description</label>
@@ -76,19 +76,21 @@
                             <th class="py-2 border-b">Stock Quantity</th>
                             <th class="py-2 border-b">Description</th>
                             <th class="py-2 border-b">Manufacturer</th>
+                            <th class="py-2 border-b">Action</th>
+
                         </tr>
                     </thead>
                     <tbody id="product-table">
                         @foreach  ($products as $key => $product)
                             <tr>
                                 <td class="py-2 border-b px-4 text-center">{{ $key + 1 }}</td>
-                                <td class="py-2 border-b px-4 text-center">{{ $product -> product_name }}</td>
+                                <td class="py-2 border-b px-4 text-center">{{ $product -> productname }}</td>
                                 <td class="py-2 border-b px-4 text-center">{{ $product -> category }}</td>
                                 <td class="py-2 border-b px-4 text-center">{{ $product -> price }}</td>
-                                <td class="py-2 border-b px-4 text-center">{{ $product -> stock_quantity }}</td>
+                                <td class="py-2 border-b px-4 text-center">{{ $product -> stockquantity }}</td>
                                 <td class="py-2 border-b px-4 text-center">{{ $product -> description }}</td>
                                 <td class="py-2 border-b px-4 text-center">{{ $product -> manufacturer }}</td>
-                                <td class="py-2 border-b px-4">
+                                <td class="py-2 border-b px-4 text-center">
                                     <a href="{{ route('product.edit', $product->id) }}" class="text-blue-500 hover:text-blue-700">Edit</a>
                                     <form method="POST" action="{{ route('product.destroy', $product->id) }}" style="display:inline;">
                                         @csrf
@@ -107,4 +109,4 @@
 
         </div>
     </div>
-</x-app-layout>
+</x-app-layout>   
