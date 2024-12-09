@@ -12,8 +12,8 @@
                     @method('PUT')
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label for="product_name"class="block text-gray-700">Product Name</label>
-                            <input type="text" id="product_name" name="product_name" value="{{ old('product_name', $product->product_name) }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                            <label for="productname"class="block text-gray-700">Product Name</label>
+                            <input type="text" id="productname" name="productname" value="{{ old('productname', $product->productname) }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                         </div>
                     
                         <div>
@@ -25,8 +25,8 @@
                             <input type="number" id="price" name="price" value="{{ old('price', $product->price) }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                         </div>
                         <div>
-                            <label for="stock_quantity"class="block text-gray-700">Stock Quantity</label>
-                            <input type="number" id="stock_quantity" name="stock_quantity" value="{{ old('stock_quantity', $product->stock_quantity) }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                            <label for="stockquantity"class="block text-gray-700">Stock Quantity</label>
+                            <input type="number" id="stockquantity" name="stockquantity" value="{{ old('stockquantity', $product->stockquantity) }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                         </div>
                         <div>
                             <label for="description"class="block text-gray-700">Description</label>
